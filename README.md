@@ -17,7 +17,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 |  # | Data             | Assunto          |
 |---:|------------------|:-----------------|
 |  1 | 2020-10-27 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing) [vídeo](https://youtu.be/c1Ab_YXKn00))   |
-|  2 | 2020-10-29 Qui   | Introdução a Sistemas Operacionais |
+|  2 | 2020-10-29 Qui   | Introdução a Sistemas Operacionais ([parte 1](https://youtu.be/7KsHiozYhv4), [parte 2](https://youtu.be/DmxuID5tytE), [slide 1](https://drive.google.com/file/d/1BQPPeJmC0gmnA5f-5WTr5sE5s3Sq8nUt/view?usp=sharing), [slide 2](./aulas/02_introducao/1_introduction.pdf)) |
 |  3 | 2020-11-03 Ter   |   |
 |  4 | 2020-11-05 Qui   |   |
 
