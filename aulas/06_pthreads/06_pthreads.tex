@@ -1,0 +1,589 @@
+
+\documentclass[xcolor=dvipsnames,11pt,presentation,aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{color}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{times,mathptmx}
+\usepackage{multimedia}
+\usepackage{framed}
+
+\usetheme{Madrid}
+
+\setbeamercovered{transparent}
+\setbeamertemplate{footline}[frame number]
+\usecolortheme[named=BrickRed]{structure}
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}[frame number]
+%\setbeamersize{text margin left=1em,text margin right=1em}
+\newcommand{\bashcmd}[1]{\textcolor{White}{\colorbox{Sepia}{\texttt{#1}}}}
+
+\newcommand{\disciplina}{Sistemas Operacionais}
+\newcommand{\aula}{Introdução POSIX Threads}
+\newcommand{\nome}{João Vicente Ferreira Lima}
+
+\lecture[1]{\aula}{aula02}
+\def\lecturename{\aula}
+
+\newcommand{\Red}[1]{{\color{red}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\Blue}[1]{{\color{blue}#1}}
+\newcommand{\blue}[1]{{\color{blue}#1}}
+
+\newcommand{\PBS}[1]{\let\temp=\\#1\let\\=\temp}
+\newcommand{\RRCOL}{\PBS\raggedright\hspace{0pt}}
+
+\title[\aula]{\aula}
+
+\subtitle{\disciplina}
+
+\author[João Vicente Ferreira Lima]{\nome}
+
+\institute[UFSM]{Departamento de Linguagens e Sistemas de Computação \\ Universidade Federal de Santa Maria \\ \url{jvlima@inf.ufsm.br}}
+\date{2020/2}
+
+\graphicspath{{.}{figs/}{../logos/}}
+
+\logo{
+    \includegraphics[height=1cm,width=1cm,keepaspectratio]{logo_inf}
+    \includegraphics[height=1cm,width=1cm,keepaspectratio]{logo_ufsm}
+}
+
+\newtheorem{mydef}{Definição}[section]
+%\newtheorem{myteo}{Teorema}[section]
+
+% Typesetting Listings
+\usepackage{listings}
+\lstset{%
+language=C,
+basicstyle=\footnotesize\sffamily,
+commentstyle=\slshape\color{green!50!black},
+keywordstyle=\bfseries\color{blue!50!black},
+stringstyle=\color{red},
+numbers=none,
+% escapechar=\#,
+breaklines=false,
+emphstyle=\color{red}
+}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+    \frametitle<presentation>{Sumário}
+    \tableofcontents[hideallsubsections]
+}
+
+\AtBeginSection{
+  \begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents[currentsection,hideothersubsections]
+  \end{frame}
+}
+
+\AtBeginSubsection{
+  \begin{frame}
+    \frametitle{Sumário}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{POSIX Threads}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------------------------------%
+%\subsection{Introdução}
+%-----------------------------------------------------------------------------%
+\begin{frame}
+  \frametitle{POSIX Threads}
+  \begin{itemize}
+  \item Padrão POSIX para threads definido em 1995 em C.
+  \item Implementado por diversos sistemas UNIX-Like:
+    \begin{itemize}
+      \item FreeBSD, NetBSD, OpenBSD, Linux, MacOS, Android, Solaris, etc.
+      \end{itemize}
+  \item Categorizado em 4 grupos:
+    \begin{itemize}
+      \item Gerenciamento de threads
+      \item Mutexes
+      \item Variáveis de condição
+      \item Sincronização
+    \end{itemize}      
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Criando threads}
+  \begin{itemize}
+  \item Principais funções
+    \begin{itemize}
+      \item \texttt{pthread\_create}
+      \item \texttt{pthread\_exit}
+      \item \texttt{pthread\_join}
+      \item \texttt{pthread\_yield}
+      \item \texttt{pthread\_cancel}
+    \end{itemize}      
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Criando threads}
+\begin{lstlisting}
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define NUM_THREADS	5
+
+int main(int argc, char *argv[])
+{
+   pthread_t threads[NUM_THREADS];
+   int rc;
+   long t;
+   for( t= 0; t < NUM_THREADS; t++ ) {
+     rc = pthread_create( &threads[t], NULL, PrintHello,
+                         (void *)t );
+     // testa rc
+   }
+
+   pthread_exit(NULL);  // return 0
+}
+\end{lstlisting}
+\end{frame}
+
+% TODO exemplo join
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Criando threads}
+\begin{lstlisting}
+
+void *PrintHello(void *threadid)
+{
+   long tid;
+   tid = (long)threadid;
+   printf("Hello World! It's me, thread #%ld!\n", tid);
+   pthread_exit(NULL);
+ }
+
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Criar e esperar}
+\begin{lstlisting}
+int main (int argc, char *argv[])
+{
+   pthread_t thread[NUM_THREADS];
+   long t;
+   void *status;
+
+   for(t=0; t<NUM_THREADS; t++) {
+     pthread_create(&thread[t], NULL, PrintHello,
+         (void *)t); 
+   }
+
+   for(t=0; t<NUM_THREADS; t++)
+       pthread_join(thread[t], &status);
+
+   pthread_exit(NULL);
+}
+\end{lstlisting}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Mutexes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \frametitle{Mutexes}
+  \begin{itemize}
+  \item São variáveis de trava do tipo dormir/acordar
+  \item Variações são de testar, ou travas leituras/escrita
+  \item Funções:
+    \begin{itemize}
+      \item \texttt{pthread\_mutex\_init}
+      \item \texttt{pthread\_mutex\_destroy}
+      \item \texttt{pthread\_mutex\_lock}
+      \item \texttt{pthread\_mutex\_unlock}
+      \item \texttt{pthread\_mutex\_trylock}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Exemplo mutex}
+  \vspace{-5mm}
+\begin{lstlisting}
+#include <stdio.h>
+#include <pthread.h>
+
+pthread_mutex_t m; // lock
+int main(void ) {
+    pthread_t tid1, tid2;
+    
+    pthread_mutex_init(&m, NULL);
+
+    pthread_create(&tid1, NULL, countgold, NULL);
+    pthread_create(&tid2, NULL, countgold, NULL);
+    // espera as duas threads
+    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
+
+    pthread_mutex_destroy(&m);
+    printf("The sum is %d\n", sum);
+
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Exemplo mutex}
+\begin{lstlisting}
+int sum = 0; // global
+
+void *countgold(void *param) {
+    int i;
+
+    // regiao critica
+    pthread_mutex_lock(&m);
+
+    for (i = 0; i < 10000000; i++) {
+	    sum += 1;
+    }
+      
+    pthread_mutex_unlock(&m);
+    return NULL;
+}
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Variáveis de condição}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Variáveis de condição}
+  \begin{itemize}
+  \item Variáveis que permitem bloquear/esperar um evento
+  \item Sinalizar uma thread ou várias
+  \item Funções importantes:
+  \begin{itemize}
+    \item \texttt{pthread\_cond\_wait}
+    \item \texttt{pthread\_cond\_signal}
+    \item \texttt{pthread\_cond\_broadcast}
+  \end{itemize}
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Variáveis de condição}
+  \vspace{-5mm}
+\begin{lstlisting}
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+  
+#define NUM_THREADS  3
+#define TCOUNT 10
+#define COUNT_LIMIT 12
+  
+int     count = 0;
+pthread_mutex_t count_mutex;
+pthread_cond_t count_threshold_cv;  
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Variáveis de condição}
+  \vspace{-5mm}
+\begin{lstlisting}
+int main(int argc, char *argv[])
+{
+  int i, rc; 
+  long t1=1, t2=2, t3=3;
+  pthread_t threads[3];
+  pthread_mutex_init(&count_mutex, NULL);
+  pthread_cond_init (&count_threshold_cv, NULL);
+
+  pthread_create(&threads[0], NULL, watch_count, (void *)t1);
+  pthread_create(&threads[1], NULL, inc_count, (void *)t2);
+  pthread_create(&threads[2], NULL, inc_count, (void *)t3);
+  for (i = 0; i < NUM_THREADS; i++) 
+    pthread_join(threads[i], NULL);
+
+  printf ("Joined with %d threads. Final value = %d. Done.\n", 
+     NUM_THREADS, count);
+  
+  pthread_mutex_destroy(&count_mutex);
+  pthread_cond_destroy(&count_threshold_cv);
+  pthread_exit (NULL);
+}
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Variáveis de condição}
+  \vspace{-5mm}
+\begin{lstlisting}
+  void *inc_count(void *t) 
+  {
+    int i;
+    long my_id = (long)t;
+  
+    for (i=0; i < TCOUNT; i++) {
+      pthread_mutex_lock(&count_mutex);
+      count++;
+  
+      if (count == COUNT_LIMIT)
+        // limite: avisa thread que monitora
+        pthread_cond_signal(&count_threshold_cv);
+
+      pthread_mutex_unlock(&count_mutex);
+      sleep(1);
+    }
+    pthread_exit(NULL);
+  }
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Variáveis de condição}
+\begin{lstlisting}
+
+void *watch_count(void *t) 
+{
+  long my_id = (long)t;
+
+  pthread_mutex_lock(&count_mutex);
+  while (count < COUNT_LIMIT) {
+    // esperando sinal
+    pthread_cond_wait(&count_threshold_cv, &count_mutex);
+  }
+  
+  count += 125;
+
+  pthread_mutex_unlock(&count_mutex);
+  pthread_exit(NULL);
+}
+
+\end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sincronização}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Sincronização}
+  \begin{itemize}
+  \item Pthreads suportam barreiras de Sincronização
+  \item As thread esperam todas chegarem até certo ponto para continuar
+  \item Funções:
+    \begin{itemize}
+      \item \texttt{pthread\_barrier\_init}
+      \item \texttt{pthread\_barrier\_destroy}
+      \item \texttt{pthread\_barrier\_wait}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Sincronização}
+  \vspace{-5mm}
+\begin{lstlisting}
+  pthread_barrier_t barreira;
+
+  int main(int argc, char *argv[])
+  {
+     pthread_t threads[NUM_THREADS];
+     long t;
+
+     pthread_barrier_init(&barreira, NULL, NUM_THREADS);
+
+     for( t= 0; t < NUM_THREADS; t++ ) {
+       rc = pthread_create( &threads[t], NULL, PrintHello,
+                           (void *)t );
+       // testa rc
+     }
+
+     pthread_barrier_destroy(&barreira);
+     pthread_exit(NULL);  // return 0
+  }
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Sincronização}
+  \vspace{-5mm}
+\begin{lstlisting}
+
+  void *PrintHello(void *threadid)
+  {
+     long tid;
+     tid = (long)threadid;
+     printf("Thread #%ld antes da barreira!\n", tid);
+
+     pthread_barrier_wait(&barreira);
+
+     printf("Thread #%ld passou!\n", tid);
+     pthread_exit(NULL);
+   }
+  
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Thread Local Storage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{Thread Local Storage}
+  \begin{itemize}
+  \item Pthreads permite ter dados globais mas específicos para cada thread.
+  \item As funções são:
+    \begin{itemize}
+      \item \texttt{pthread\_key\_create}
+      \item \texttt{pthread\_getspecific}
+      \item \texttt{pthread\_setspecific}
+      \item \texttt{pthread\_key\_delete}
+    \end{itemize}  
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Exemplo TLS}
+  \vspace{-5mm}
+\begin{lstlisting}
+static pthread_key_t   chave;
+static pthread_once_t  inicia_once = PTHREAD_ONCE_INIT;
+// esta e chamada apenas quando destroi o dado
+void libera_no_fim (void *buffer){
+  free(buffer);
+}
+// esta e chamada por apenas uma thread
+void inicializa (void){
+  pthread_key_create(&grader_key, libera_no_fim);
+}
+// varias threads chamam esta funcao
+void *aloca(void *param) { 
+  char* texto;
+  pthread_once(&inicia_once, inicializa); // apenas uma thread 
+  texto = pthread_getspecific(chave);
+  if(texto == NULL){
+    texto = (char*)malloc( sizeof(char)*100 );
+    pthread_setspecific(chave, texto);
+  }
+  pthread_exit(NULL);
+}
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{GCC TLS}
+  \vspace{-5mm}
+  Outro alternativa é o \texttt{\_\_thread} do C11.
+\begin{lstlisting}
+__thread char *texto = NULL;
+
+// varias threads chamam esta funcao
+void *aloca(void *param) { 
+  char* texto;
+
+  if(texto == NULL){
+    texto = (char*)malloc( sizeof(char)*100 );
+    // cada thread tem sua copia
+  }
+
+  pthread_exit(NULL);
+}
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{GCC Atomics}
+GCC possui funções built-in do compilador como abaixo:
+\begin{lstlisting}
+type __sync_fetch_and_add (type *ptr, type value, ...)
+type __sync_fetch_and_sub (type *ptr, type value, ...)
+type __sync_fetch_and_or (type *ptr, type value, ...)
+type __sync_fetch_and_and (type *ptr, type value, ...)
+type __sync_fetch_and_xor (type *ptr, type value, ...)
+type __sync_fetch_and_nand (type *ptr, type value, ...)
+
+type __sync_add_and_fetch (type *ptr, type value, ...)
+type __sync_sub_and_fetch (type *ptr, type value, ...)
+type __sync_or_and_fetch (type *ptr, type value, ...)
+type __sync_and_and_fetch (type *ptr, type value, ...)
+type __sync_xor_and_fetch (type *ptr, type value, ...)
+type __sync_nand_and_fetch (type *ptr, type value, ...)
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{GCC Atomics}
+GCC possui funções built-in do compilador como abaixo:
+\begin{lstlisting}
+  bool __sync_bool_compare_and_swap (type *ptr,
+      type oldval type newval, ...)
+  type __sync_val_compare_and_swap (type *ptr,
+      type oldval type newval, ...)
+
+  __sync_synchronize (...)
+
+  void __sync_lock_release (type *ptr, ...)
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Exemplo de soma com GCC atomics}
+\begin{lstlisting}
+int sum = 0; // global
+
+void *countgold(void *param) {
+    int i;
+
+    // regiao critica
+    for (i = 0; i < 10000000; i++)
+      __sync_fetch_and_add( &sum, 1 ) ;
+  
+
+    return NULL;
+}
+\end{lstlisting}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}[plain]{}
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \frametitle{}
+  \begin{center}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \raggedleft
+\includegraphics[width=4cm]{logo_ufsm}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\includegraphics[width=4cm]{logo_inf}
+    \end{column}
+  \end{columns}
+\end{center}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
