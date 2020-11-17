@@ -23,7 +23,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 |  5 | 2020-11-10 Ter   | Criação de processos ([vídeo](https://youtu.be/NZRuGDsEruA), [exemplos](./aulas/05_fork))         |
 |  6 | 2020-11-13 Qui   |  Comunicação entre processos (parte 1) ([vídeo](https://youtu.be/VAjdkpWYcA4)) |
 |   7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  |
-| 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA)) |
+| 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA), [slides](./aulas/08_pthreads/08_pthreads.pdf)) |
 
 
 ## Material de apoio
