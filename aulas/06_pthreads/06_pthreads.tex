@@ -335,6 +335,29 @@ int main(int argc, char *argv[])
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
   \frametitle{Variáveis de condição}
+\begin{lstlisting}
+
+void *watch_count(void *t) 
+{
+  long my_id = (long)t;
+
+  pthread_mutex_lock(&count_mutex);
+  while (count < COUNT_LIMIT) {
+    // esperando sinal
+    pthread_cond_wait(&count_threshold_cv, &count_mutex);
+  }
+  
+  count += 125;
+
+  pthread_mutex_unlock(&count_mutex);
+  pthread_exit(NULL);
+}
+
+\end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]
+  \frametitle{Variáveis de condição}
   \vspace{-5mm}
 \begin{lstlisting}
   void *inc_count(void *t) 
@@ -357,29 +380,7 @@ int main(int argc, char *argv[])
   }
 \end{lstlisting}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]
-  \frametitle{Variáveis de condição}
-\begin{lstlisting}
 
-void *watch_count(void *t) 
-{
-  long my_id = (long)t;
-
-  pthread_mutex_lock(&count_mutex);
-  while (count < COUNT_LIMIT) {
-    // esperando sinal
-    pthread_cond_wait(&count_threshold_cv, &count_mutex);
-  }
-  
-  count += 125;
-
-  pthread_mutex_unlock(&count_mutex);
-  pthread_exit(NULL);
-}
-
-\end{lstlisting}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sincronização}
@@ -474,7 +475,7 @@ void libera_no_fim (void *buffer){
 }
 // esta e chamada por apenas uma thread
 void inicializa (void){
-  pthread_key_create(&grader_key, libera_no_fim);
+  pthread_key_create(&chave, libera_no_fim);
 }
 // varias threads chamam esta funcao
 void *aloca(void *param) { 
