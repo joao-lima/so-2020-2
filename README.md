@@ -16,7 +16,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 
 |  # | Data             | Assunto          |
 |---:|------------------|:-----------------|
-|  1 | 2020-10-27 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing) [vídeo](https://youtu.be/c1Ab_YXKn00))   |
+|  1 | 2020-10-27 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing), [vídeo](https://youtu.be/c1Ab_YXKn00))   |
 |  2 | 2020-10-29 Qui   | Introdução a Sistemas Operacionais ([vídeo 1](https://youtu.be/7KsHiozYhv4), [vídeo 2](https://youtu.be/DmxuID5tytE), [áudio 1](https://drive.google.com/file/d/1TKn-5udiXFnrsbpZvdwcxtR2AEj1Rly7/view?usp=sharing), [áudio 2](https://drive.google.com/file/d/1iuoUs5tFJGGppZKFrqYhiAFvOd9qIzmd/view?usp=sharing), [slide 1](https://drive.google.com/file/d/1BQPPeJmC0gmnA5f-5WTr5sE5s3Sq8nUt/view?usp=sharing), [slide 2](./aulas/02_introducao/1_introduction.pdf)) |
 |  3 | 2020-11-03 Ter   |  Processos ([vídeo](https://youtu.be/3BqGeD5ikzM), [áudio](https://drive.google.com/file/d/17OYRc-YYKoUzHL9dyVCaYfCBcOwyefJw/view?usp=sharing), [slides](https://drive.google.com/file/d/1KoKli1WBU3kgKEERlRAZzZ_XNDRqa5BH/view?usp=sharing)) |
 |  4 | 2020-11-05 Qui   | Threads ([vídeo](https://youtu.be/eePJ9G7YKN0), [áudio](https://drive.google.com/file/d/1FMir345C6eAhp3UziT86DAevhjbr0CtY/view?usp=sharing)) |
@@ -24,7 +24,9 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 |  6 | 2020-11-13 Qui   |  Comunicação entre processos (parte 1) ([vídeo](https://youtu.be/VAjdkpWYcA4)) |
 |   7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  |
 | 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA), [slides](./aulas/08_pthreads/08_pthreads.pdf)) |
-| 9 | 2020-11-24 Ter   | Escalonamento ([vídeo](https://youtu.be/VldbYq4lHfA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))
+| 9 | 2020-11-24 Ter   | Escalonamento - parte 1 ([vídeo](https://youtu.be/VldbYq4lHfA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing)) |
+| 10 | 2020-11-26 Qui  | Escalonamento - parte 2 ([vídeo](https://youtu.be/Qg4VhzPIcJA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))  |
+| 11 | 2020-12-01 Ter  | Escalonamento - parte 3 () |
 
 
 ## Material de apoio
