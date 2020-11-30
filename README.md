@@ -14,19 +14,42 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 
 ## Aulas e trabalhos
 
-|  # | Data             | Assunto          |
-|---:|------------------|:-----------------|
-|  1 | 2020-10-27 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing), [vídeo](https://youtu.be/c1Ab_YXKn00))   |
-|  2 | 2020-10-29 Qui   | Introdução a Sistemas Operacionais ([vídeo 1](https://youtu.be/7KsHiozYhv4), [vídeo 2](https://youtu.be/DmxuID5tytE), [áudio 1](https://drive.google.com/file/d/1TKn-5udiXFnrsbpZvdwcxtR2AEj1Rly7/view?usp=sharing), [áudio 2](https://drive.google.com/file/d/1iuoUs5tFJGGppZKFrqYhiAFvOd9qIzmd/view?usp=sharing), [slide 1](https://drive.google.com/file/d/1BQPPeJmC0gmnA5f-5WTr5sE5s3Sq8nUt/view?usp=sharing), [slide 2](./aulas/02_introducao/1_introduction.pdf)) |
-|  3 | 2020-11-03 Ter   |  Processos ([vídeo](https://youtu.be/3BqGeD5ikzM), [áudio](https://drive.google.com/file/d/17OYRc-YYKoUzHL9dyVCaYfCBcOwyefJw/view?usp=sharing), [slides](https://drive.google.com/file/d/1KoKli1WBU3kgKEERlRAZzZ_XNDRqa5BH/view?usp=sharing)) |
-|  4 | 2020-11-05 Qui   | Threads ([vídeo](https://youtu.be/eePJ9G7YKN0), [áudio](https://drive.google.com/file/d/1FMir345C6eAhp3UziT86DAevhjbr0CtY/view?usp=sharing)) |
-|  5 | 2020-11-10 Ter   | Criação de processos ([vídeo](https://youtu.be/NZRuGDsEruA), [exemplos](./aulas/05_fork))         |
-|  6 | 2020-11-13 Qui   |  Comunicação entre processos (parte 1) ([vídeo](https://youtu.be/VAjdkpWYcA4)) |
-|   7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  |
-| 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA), [slides](./aulas/08_pthreads/08_pthreads.pdf)) |
-| 9 | 2020-11-24 Ter   | Escalonamento - parte 1 ([vídeo](https://youtu.be/a5p_KUjEhYk), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing)) |
-| 10 | 2020-11-26 Qui  | Escalonamento - parte 2 ([vídeo](https://youtu.be/Qg4VhzPIcJA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))  |
-| 11 | 2020-12-01 Ter  | Escalonamento - parte 3 () |
+|  # | Data             | Assunto          | Livro |
+|---:|------------------|:-----------------|------|
+|  1 | 2020-10-27 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing), [vídeo](https://youtu.be/c1Ab_YXKn00))   | - |
+|  2 | 2020-10-29 Qui   | Introdução a Sistemas Operacionais ([vídeo 1](https://youtu.be/7KsHiozYhv4), [vídeo 2](https://youtu.be/DmxuID5tytE), [áudio 1](https://drive.google.com/file/d/1TKn-5udiXFnrsbpZvdwcxtR2AEj1Rly7/view?usp=sharing), [áudio 2](https://drive.google.com/file/d/1iuoUs5tFJGGppZKFrqYhiAFvOd9qIzmd/view?usp=sharing), [slide 1](https://drive.google.com/file/d/1BQPPeJmC0gmnA5f-5WTr5sE5s3Sq8nUt/view?usp=sharing), [slide 2](./aulas/02_introducao/1_introduction.pdf)) |  Cap. 1 |
+|  3 | 2020-11-03 Ter   |  Processos ([vídeo](https://youtu.be/3BqGeD5ikzM), [áudio](https://drive.google.com/file/d/17OYRc-YYKoUzHL9dyVCaYfCBcOwyefJw/view?usp=sharing), [slides](https://drive.google.com/file/d/1KoKli1WBU3kgKEERlRAZzZ_XNDRqa5BH/view?usp=sharing)) | 2.1 |
+|  4 | 2020-11-05 Qui   | Threads ([vídeo](https://youtu.be/eePJ9G7YKN0), [áudio](https://drive.google.com/file/d/1FMir345C6eAhp3UziT86DAevhjbr0CtY/view?usp=sharing)) | 2.2 |
+|  5 | 2020-11-10 Ter   | Criação de processos ([vídeo](https://youtu.be/NZRuGDsEruA), [exemplos](./aulas/05_fork))         | - |
+|  6 | 2020-11-13 Qui   |  Comunicação entre processos (parte 1) ([vídeo](https://youtu.be/VAjdkpWYcA4)) | 2.3 |
+|   7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  | 2.3 |
+| 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA), [slides](./aulas/08_pthreads/08_pthreads.pdf)) | - |
+| 9 | 2020-11-24 Ter   | Escalonamento - parte 1 ([vídeo](https://youtu.be/a5p_KUjEhYk), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing)) | 2.4 |
+| 10 | 2020-11-26 Qui  | Escalonamento - parte 2 ([vídeo](https://youtu.be/Qg4VhzPIcJA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))  | 2.4 |
+| 11 | 2020-12-01 Ter  | Problemas clássicos de IPC ([vídeo](https://youtu.be/20V2XFLaWyw), [slides](https://docs.google.com/presentation/d/1y6G3lx04uVuZBzJzoaDSH60DxcC0AuLOrSuaJfyrmSc/edit?usp=sharing)) | 2.5 |
+| 12  | 2020-12-03 Qui | Atividade 1 | - | 
+| 13 | 2020-12-03 Qui  | Entrada e saída    | 5.1 |
+| 13 | 2020-12-08 Ter  | Princípios e camadas de software de E/S | 5.2, 5.3 | 
+| 14 | 2020-12-10 Qui  | Hardware e Thin Clients | 5.4-5.7  |
+| -  | -               | Atividade 2 | - |
+| 15 | 2020-12-15 Ter  | Gerenciamento de memória            | 3.1  |
+| 16 | 2020-12-17 Qui  | Espaços de endereçamento            |  3.2 |
+| 17 | 2020-12-22 Ter  | Memória virtual            | 3.3  |
+| 18 | 2020-12-24 Qui  |             |   |
+| 19 | 2021-01-05 Ter  |             |   |
+| 20 | 2021-01-07 Qui  |             |   |
+| 21 | 2021-01-12 Ter  |             |   |
+| 22 | 2021-01-14 Qui  |             |   |
+| 23 | 2021-01-19 Ter  |             |   |
+| 24 | 2021-01-21 Qui  |             |   |
+| 25 | 2021-01-26 Ter  |             |   |
+| 26 | 2021-01-28 Qui  |             |   |
+| 27 | 2021-02-02 Ter  |             |   |
+| 28 | 2021-02-04 Qui  |             |   |
+| 29 | 2021-02-09 Ter  |             |   |
+| 30 | 2021-02-11 Qui  |             |   |
+
+
 
 
 ## Material de apoio
