@@ -28,7 +28,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 10 | 2020-11-26 Qui  | Escalonamento - parte 2 ([vídeo](https://youtu.be/Qg4VhzPIcJA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))  | 
 | 11 | 2020-12-01 Ter  | Problemas clássicos de IPC ([vídeo](https://youtu.be/20V2XFLaWyw), [slides](https://docs.google.com/presentation/d/1y6G3lx04uVuZBzJzoaDSH60DxcC0AuLOrSuaJfyrmSc/edit?usp=sharing)) | 
 | 12  | 2020-12-03 Qui | Atividade 1 | 
-| 13 | 2020-12-03 Qui  | Entrada e saída    | 
+| 13 | 2020-12-03 Qui  | Entrada e saída   ([vídeo](https://youtu.be/6-D8Wx_895M), [slides](https://docs.google.com/presentation/d/1bQDEUq7O3ySu7_J9tYyOUYq1AxD97iQZL2bL0ARNaDs/edit?usp=sharing)) | 
 | 13 | 2020-12-08 Ter  | Princípios e camadas de software de E/S | 
 | 14 | 2020-12-10 Qui  | Hardware e Thin Clients | 
 | -  | -               | Atividade 2 | 
