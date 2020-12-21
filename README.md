@@ -22,7 +22,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 |  4 | 2020-11-05 Qui   | Threads ([vídeo](https://youtu.be/eePJ9G7YKN0), [áudio](https://drive.google.com/file/d/1FMir345C6eAhp3UziT86DAevhjbr0CtY/view?usp=sharing)) | 
 |  5 | 2020-11-10 Ter   | Criação de processos ([vídeo](https://youtu.be/NZRuGDsEruA), [exemplos](./aulas/05_fork))         | 
 |  6 | 2020-11-13 Qui   |  Comunicação entre processos (parte 1) ([vídeo](https://youtu.be/VAjdkpWYcA4)) | 
-|   7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  | 
+|  7 | 2020-11-17 Ter  | Comunicação entre processos (parte 2) ([vídeo](https://youtu.be/OQQd6BOuc1k))  | 
 | 8 | 2020-11-19  Qui  | Introdução POSIX Threads ([vídeo](https://youtu.be/GAckKe92lUA), [slides](./aulas/08_pthreads/08_pthreads.pdf)) | 
 | 9 | 2020-11-24 Ter   | Escalonamento - parte 1 ([vídeo](https://youtu.be/a5p_KUjEhYk), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing)) | 
 | 10 | 2020-11-26 Qui  | Escalonamento - parte 2 ([vídeo](https://youtu.be/Qg4VhzPIcJA), [slides](https://docs.google.com/presentation/d/1B6gwQ2h22Dl3I2bYY4zFY8JV4z8batjURPjUjsYTaHU/edit?usp=sharing))  | 
@@ -32,14 +32,13 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 13 | 2020-12-10 Qui  | Entrada e saída   ([vídeo](https://youtu.be/6-D8Wx_895M), [slides](https://docs.google.com/presentation/d/1bQDEUq7O3ySu7_J9tYyOUYq1AxD97iQZL2bL0ARNaDs/edit?usp=sharing)) | 
 | 14 | 2020-12-15 Ter  | Interrupções de E/S ([vídeo](https://youtu.be/_T-sdcfRIv0), [slides](https://docs.google.com/presentation/d/1jSJ_xUAboLDCGwuFQQcq_S9eKKKRgLBINLNyC1J0RG4/edit?usp=sharing)) | 
 | 15 | 2020-12-15 Ter  | Atividade 2 | 
-| 16 | 2020-12-17 Qui  | Princípios e camadas de software de E/S | 
-| 14 | 2020-12-10 Qui  | Hardware e Thin Clients | 
-| 15 | 2020-12-15 Ter  | Gerenciamento de memória            | 
-| 16 | 2020-12-17 Qui  | Espaços de endereçamento            |  
-| 17 | 2020-12-22 Ter  | Memória virtual            | 
-| 18 | 2020-12-24 Qui  |             |   
-| 19 | 2021-01-05 Ter  |             |   
-| 20 | 2021-01-07 Qui  |             |   
+| 16 | 2020-12-17 Qui  | Princípios e camadas de software de E/S ([vídeo](https://youtu.be/h1q97QAl0vA),[slides](https://docs.google.com/presentation/d/1te_bXQtKDtMnx-qga0QySiU7Jz1dHbPlM6yVDA5vCOg/edit?usp=sharing)) | 
+| 17 | 2020-12-22 Ter  | Hardware e Thin Clients |
+| -  | -               |  |
+| 15 | 2020-12-22 Qui  | Atividade 3 |
+| 16 | 2020-12-24 Ter  | Gerenciamento de memória            | 
+| 17 | 2021-01-05 Ter  | Espaços de endereçamento            |   
+| 20 | 2021-01-07 Qui  | Memória virtual                    |   
 | 21 | 2021-01-12 Ter  |             |   
 | 22 | 2021-01-14 Qui  |             |   
 | 23 | 2021-01-19 Ter  |             |   
