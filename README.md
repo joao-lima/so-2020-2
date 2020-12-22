@@ -33,7 +33,7 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 14 | 2020-12-15 Ter  | Interrupções de E/S ([vídeo](https://youtu.be/_T-sdcfRIv0), [slides](https://docs.google.com/presentation/d/1jSJ_xUAboLDCGwuFQQcq_S9eKKKRgLBINLNyC1J0RG4/edit?usp=sharing)) | 
 | 15 | 2020-12-15 Ter  | Atividade 2 | 
 | 16 | 2020-12-17 Qui  | Princípios e camadas de software de E/S ([vídeo](https://youtu.be/h1q97QAl0vA),[slides](https://docs.google.com/presentation/d/1te_bXQtKDtMnx-qga0QySiU7Jz1dHbPlM6yVDA5vCOg/edit?usp=sharing)) | 
-| 17 | 2020-12-22 Ter  | Hardware e Thin Clients |
+| 17 | 2020-12-22 Ter  | RAID e X Window ([vídeo](https://youtu.be/0aLqeUT8oJ0), [slides](https://docs.google.com/presentation/d/1-ipoK_3JfJamJXkJ-L-m-Nn26UF1kiurZdOIeVSJgJQ/edit?usp=sharing)) |
 | -  | -               |  |
 | 15 | 2020-12-22 Qui  | Atividade 3 |
 | 16 | 2020-12-24 Ter  | Gerenciamento de memória            | 
