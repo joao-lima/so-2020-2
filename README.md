@@ -12,7 +12,7 @@ Horários: terças 10:30, quintas 13:30.
 
 O objetivo da disciplina de Sistemas Operacionais é entender os principais conceitos de sistemas operacionais modernos.
 
-## Aulas e trabalhos
+## Aulas e Atividades
 
 |  # | Data             | Assunto          |
 |---:|------------------|:-----------------|
@@ -51,7 +51,12 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 30 | 2021-02-11 Qui  |             |   
 
 
+## Trabalhos
 
+|  # | Data             | Assunto          |
+|---:|------------------|:-----------------|
+| T1 | 2021-02-12 Sex   | [Micro Shell](./trabalhos/T1) |   
+| T2 | 2021-02-12 Sex   | [Números com Threads POSIX](./trabalhos/T2) |   
 
 ## Material de apoio
 
