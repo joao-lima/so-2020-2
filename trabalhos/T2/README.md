@@ -22,7 +22,7 @@ O minimo e: 9
 O maximo e: 91
 ```
 
-Use variáveis globais para representar os valores de média, mínimo e máximo. Os passos que o programa deve seguir são:
+Use variáveis globais para guardar a lista de números, e representar os valores de média, mínimo e máximo. Os passos que o programa deve seguir são:
 - Antes de criar as threads, o programa deve ler a lista de valores digitados pelo usuário da entrada padrão (`stdin` em C ou `std::cin` em C++).
 - Somente após ler os valores as threads podem ser criadas. 
 - Quando as threads terminarem de calcular os valores, a thread principal pode imprimir os valores calculados.
