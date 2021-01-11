@@ -36,16 +36,16 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 17 | 2020-12-22 Ter  | RAID e X Window ([vídeo](https://youtu.be/0aLqeUT8oJ0), [slides](https://docs.google.com/presentation/d/1-ipoK_3JfJamJXkJ-L-m-Nn26UF1kiurZdOIeVSJgJQ/edit?usp=sharing)) |
 | 18 | 2021-01-05 Ter  | Atividade 3 |
 | 19 | 2021-01-07 Qui  | Trabalhos [T1](./trabalhos/T1) e [T2](./trabalhos/T2)        | 
-| 21 | 2021-01-12 Ter  | Gerenciamento de memória  ([vídeo](https://youtu.be/MYZ08M17ksU), [slides](https://docs.google.com/presentation/d/1u8HyH1hUi5iYes5QxiLOrQVcNbhxBmiEXWz5GDbVem4/edit?usp=sharing))       |   
-| 22 | 2021-01-14 Qui  | Memória virtual |   
-| 23 | 2021-01-19 Ter  | Espaços de endereçamento             |   
-| 24 | 2021-01-21 Qui  |             |   
-| 25 | 2021-01-26 Ter  |             |   
-| 26 | 2021-01-28 Qui  |             |   
-| 27 | 2021-02-02 Ter  |             |   
-| 28 | 2021-02-04 Qui  |             |   
-| 29 | 2021-02-09 Ter  |             |   
-| 30 | 2021-02-11 Qui  |             |   
+| 20 | 2021-01-12 Ter  | Gerenciamento de memória  ([vídeo](https://youtu.be/MYZ08M17ksU), [slides](https://docs.google.com/presentation/d/1u8HyH1hUi5iYes5QxiLOrQVcNbhxBmiEXWz5GDbVem4/edit?usp=sharing))       |   
+| 21 | 2021-01-14 Qui  | Memória virtual |   
+| 22 | 2021-01-19 Ter  | Espaços de endereçamento             |   
+| 23 | 2021-01-21 Qui  |             |   
+| 24 | 2021-01-26 Ter  |             |   
+| 25 | 2021-01-28 Qui  |             |   
+| 26 | 2021-02-02 Ter  |             |   
+| 27 | 2021-02-04 Qui  |             |   
+| 28 | 2021-02-09 Ter  |             |   
+| 29 | 2021-02-11 Qui  |             |   
 | -  | -               |  |
 
 
