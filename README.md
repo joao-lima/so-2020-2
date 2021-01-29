@@ -40,13 +40,13 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 21 | 2021-01-14 Qui  | Atividade 3 |   
 | 22 | 2021-01-19 Ter  | Gerenciamento de memória ([vídeo](https://youtu.be/9TxkWgpwXB4), [slides](https://docs.google.com/presentation/d/1-rS5JEVLA4z1ywGy5_TyXMDF0sDpvEd96JIlKqxCvDs/edit?usp=sharing))     |   
 | 23 | 2021-01-21 Qui  | Memória virtual ([vídeo](https://youtu.be/iK_1B1Htbj4), [slides](https://docs.google.com/presentation/d/1bZyBlR47PRUsZnrYZKD_zJOKd_7JqP9-kD5I50z6Q1k/edit?usp=sharing))    |   
-| 24 | 2021-01-26 Ter  | Espaços de endereçamento            |   
-| 25 | 2021-01-28 Qui  |             |   
-| 26 | 2021-02-02 Ter  |             |   
-| 27 | 2021-02-04 Qui  |             |   
+| 24 | 2021-01-26 Ter  | Memória virtual ([vídeo](https://youtu.be/haISlBrd6iU), [slides](https://docs.google.com/presentation/d/1mu-fph4_vj-sjvs44oiDspwe-aj5pahrEJ51veTT_fg/edit?usp=sharing))        |   
+| 25 | 2021-01-28 Qui  | Substituição de páginas            |   
+| 26 | 2021-02-02 Ter  | Segmentação            |   
+| 27 | 2021-02-04 Qui  | Sistemas de arquivos            |   
 | 28 | 2021-02-09 Ter  |             |   
 | 29 | 2021-02-11 Qui  |             |   
-| -  | -               |  |
+
 
 
 ## Trabalhos
