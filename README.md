@@ -41,10 +41,10 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 22 | 2021-01-19 Ter  | Gerenciamento de memória ([vídeo](https://youtu.be/9TxkWgpwXB4), [slides](https://docs.google.com/presentation/d/1-rS5JEVLA4z1ywGy5_TyXMDF0sDpvEd96JIlKqxCvDs/edit?usp=sharing))     |   
 | 23 | 2021-01-21 Qui  | Memória virtual ([vídeo](https://youtu.be/iK_1B1Htbj4), [slides](https://docs.google.com/presentation/d/1bZyBlR47PRUsZnrYZKD_zJOKd_7JqP9-kD5I50z6Q1k/edit?usp=sharing))    |   
 | 24 | 2021-01-26 Ter  | Memória virtual ([vídeo](https://youtu.be/haISlBrd6iU), [slides](https://docs.google.com/presentation/d/1mu-fph4_vj-sjvs44oiDspwe-aj5pahrEJ51veTT_fg/edit?usp=sharing))        |   
-| 25 | 2021-01-28 Qui  | Substituição de páginas            |   
-| 26 | 2021-02-02 Ter  | Segmentação            |   
-| 27 | 2021-02-04 Qui  | Sistemas de arquivos            |   
-| 28 | 2021-02-09 Ter  |             |   
+| 25 | 2021-01-28 Qui  | Substituição de páginas ([vídeo](https://youtu.be/rKhVRi-qFbA), [slides](https://docs.google.com/presentation/d/1XZ_RXnHiUDVq7f4fh0sf_Xc2gUiKlcL7XPo-O_lEQRQ/edit?usp=sharing))           |   
+| 26 | 2021-02-02 Ter  | [Aula sobre o T1](https://youtu.be/leTMtRsAuR8) |   
+| 27 | 2021-02-04 Qui  | Segmentação            |   
+| 28 | 2021-02-09 Ter  | Sistemas de arquivos             |   
 | 29 | 2021-02-11 Qui  |             |   
 
 
