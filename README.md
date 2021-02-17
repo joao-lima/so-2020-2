@@ -43,9 +43,10 @@ O objetivo da disciplina de Sistemas Operacionais é entender os principais conc
 | 24 | 2021-01-26 Ter  | Memória virtual ([vídeo](https://youtu.be/haISlBrd6iU), [slides](https://docs.google.com/presentation/d/1mu-fph4_vj-sjvs44oiDspwe-aj5pahrEJ51veTT_fg/edit?usp=sharing))        |   
 | 25 | 2021-01-28 Qui  | Substituição de páginas ([vídeo](https://youtu.be/rKhVRi-qFbA), [slides](https://docs.google.com/presentation/d/1XZ_RXnHiUDVq7f4fh0sf_Xc2gUiKlcL7XPo-O_lEQRQ/edit?usp=sharing))           |   
 | 26 | 2021-02-02 Ter  | [Aula sobre o T1](https://youtu.be/leTMtRsAuR8) |   
-| 27 | 2021-02-04 Qui  | Segmentação            |   
-| 28 | 2021-02-09 Ter  | Sistemas de arquivos             |   
-| 29 | 2021-02-11 Qui  |             |   
+| 27 | 2021-02-04 Qui  | Segmentação ([vídeo](https://youtu.be/n5IRq9i5jmI))           |   
+| 28 | 2021-02-09 Ter  | Sistemas de arquivos  ([vídeo](https://youtu.be/ei_9BkNOWRk)) |   
+| 29 | 2021-02-11 Qui  | [Aula sobre o T2](https://youtu.be/K0QHQ37fzIg) |   
+| 30 | 2021-02-13 Sab  | Prazo T1 e T2 |   
 
 
 
